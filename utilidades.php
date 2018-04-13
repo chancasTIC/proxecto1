@@ -1,0 +1,51 @@
+<?php
+/**
+ * Ficheiro con utilidades empregadas por toda a aplicación. Esta é a descrición simple. Unha liña como máximo.
+ *
+ * Este ficheiro debe ser incluído de forma xeral en todas as clases para poder ser utilizado
+ * e debemos considerar o emprego de UTF8 para a codificación principal de caracteres. Tamén cabe
+ * indicar o emprego da internacionalización para as horas e as datas. Esto sería unha descrición 
+ * detallada do que fai o código, neste caso o ficheiro.
+ *
+ * @package	Proxecto1
+ * @license	https://creativecommons.org/licenses/by-sa/4.0/legalcode Creative Commons 4.0 Attributioin ShareAlike
+ * @author	Julio Mosquera González <julio.mosquera@edu.xunta.es>
+ * @version	Version 0.5.1
+ */
+
+
+	/**
+	* Declaración da variable global $debug. Se está a 1 indica modo verboso e se está a 0 non.
+	@global int $global
+	*/
+	$debug = 0;
+
+	
+	/**
+	* Función que calcula a secuencia de Fibonacci
+	*
+	* @param int $limite Cantidade de elementos da serie Fibonacci a calcular. Se non se indica colle o valor 10
+	* @throws InvalidArgumentException se o argumento da función é negativo ou non é un número
+	* @return String Unha cadea de texto plano coa serie representada
+	*/	
+	function seriefibonacci ( $limite = 10){
+		
+		if (isset ($limite))
+			if (!filter_var($limite, FILTER_VALIDATE_INT))
+				throw new InvalidArgumentException ("seriefibonacci: Parámetro non é un enteiro");
+			else if($limite < 0)
+				throw new InvalidArgumentException ("seriefibonacci: Parámetro non é un enteiro positivo");
+				
+		$n1 = 1;
+		$n2 = 0;
+		$cadea = "0 ";
+		for ($i = 0; $i <= $limite; $i++){
+			$suma = $n1 + $n2;
+			$n1 = $n2;
+			$n2 = $suma;
+			$cadea .= $suma." ";
+		}
+		return $cadea;
+	}
+	
+?>
