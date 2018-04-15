@@ -39,6 +39,15 @@
 		}
 		
 		/**
+		* Destrutor da clase Figura
+		*		
+		* @return void
+		*/
+		function __destruct() {
+			print "<p>Destruíndo obxecto Figura " . $this->nome . ".</p>\n";
+		}
+		
+		/**
 		* Getter da propiedade nome de Figura
 		*
 		* @return string Devolve o contido da propiedade $nome
