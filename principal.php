@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Páxina Principal de probas</title>
+</head>
+<body>
 <?php
 /**
  * Alberga o punto de entrada na aplicación
@@ -22,3 +30,5 @@
 	echo seriefibonacci();
 	
 ?>
+</body>
+<html>
